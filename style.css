@@ -5,7 +5,6 @@ body {
   color: #ffffff;
 }
 
-/* TOPO */
 header {
   text-align: center;
   padding: 40px 20px;
@@ -19,8 +18,7 @@ header h1 {
 
 header p {
   font-size: 18px;
-  opacity: 0.9;
-  margin: 5px 0;
+  margin: 6px 0;
 }
 
 .btn {
@@ -34,14 +32,12 @@ header p {
   font-weight: bold;
 }
 
-/* MENU */
 nav {
   position: sticky;
   top: 0;
   background-color: #1a0026;
   padding: 12px;
   text-align: center;
-  z-index: 10;
 }
 
 nav a {
@@ -51,19 +47,12 @@ nav a {
   font-weight: bold;
 }
 
-/* CONTEÚDO */
 section {
   max-width: 900px;
   margin: auto;
   padding: 30px 15px;
 }
 
-section h2 {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-/* PÁGINAS DO LIVRO */
 .pagina {
   margin-bottom: 35px;
   text-align: center;
@@ -75,14 +64,11 @@ section h2 {
   height: auto;
   border-radius: 6px;
   box-shadow: 0 0 25px rgba(0,0,0,0.6);
-  cursor: zoom-in;
 }
 
-/* RODAPÉ */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #1a0026;
   font-size: 14px;
-  opacity: 0.85;
 }
