@@ -1,21 +1,8 @@
-const imagens = document.querySelectorAll(".galeria img");
-const viewer = document.getElementById("viewer");
-const viewerImg = document.getElementById("viewer-img");
-const close = document.getElementById("close");
-
-imagens.forEach(img => {
-  img.addEventListener("click", () => {
-    viewerImg.src = img.src;
-    viewer.style.display = "flex";
+// Scroll suave ao clicar em links internos
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const alvo = document.querySelector(this.getAttribute("href"));
+    alvo.scrollIntoView({ behavior: "smooth" });
   });
-});
-
-close.addEventListener("click", () => {
-  viewer.style.display = "none";
-});
-
-viewer.addEventListener("click", (e) => {
-  if (e.target === viewer) {
-    viewer.style.display = "none";
-  }
 });
