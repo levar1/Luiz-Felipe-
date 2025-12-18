@@ -3,124 +3,194 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ELIMS - Leitura</title>
+
+  <title>ELIMS – Leitura Online</title>
+
+  <meta name="description" content="Livro ELIMS completo para leitura online. Autor: Luiz Felipe">
+  <meta name="keywords" content="ELIMS, livro ELIMS, leitura online, livro digital">
+  <meta name="author" content="Luiz Felipe">
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0b0014;
-      color: white;
+      background-color: #120018;
+      color: #ffffff;
     }
 
     header {
-      background: linear-gradient(135deg, #7b2cbf, #5a189a);
-      padding: 24px;
       text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #5e2b97, #3a0a63);
     }
 
     header h1 {
+      font-size: 48px;
       margin: 0;
-      font-size: 36px;
-      font-weight: bold;
     }
 
     header p {
-      margin: 6px 0 0;
-      font-size: 16px;
+      font-size: 18px;
       opacity: 0.9;
+      margin: 5px 0;
     }
 
-    .galeria {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      padding: 20px;
-    }
-
-    .galeria img {
-      width: 95%;
-      max-width: 900px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(123, 44, 191, 0.5);
-      transition: transform 0.3s ease;
-      cursor: zoom-in;
-    }
-
-    .galeria img:hover {
-      transform: scale(1.02);
-    }
-
-    a {
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #ffffff;
+      color: #5e2b97;
       text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
     }
 
-    @media (max-width: 600px) {
-      .galeria img {
-        width: 100%;
-      }
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #1a0026;
+      padding: 12px;
+      text-align: center;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 15px;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .pagina {
+      margin-bottom: 35px;
+      text-align: center;
+    }
+
+    .pagina img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1a0026;
+      font-size: 14px;
+      opacity: 0.85;
     }
   </style>
 </head>
 
 <body>
-<header>
+
+<header id="inicio">
   <h1>ELIMS</h1>
-  <p>Leitura Completa</p>
+  <p>Autor: Luiz Felipe</p>
+  <p>Leitura online • Livro digital</p>
+  <a href="#livro" class="btn">📖 Ler agora</a>
 </header>
 
-<div class="galeria">
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#livro">Livro</a>
+</nav>
 
-  <a href="https://postimg.cc/c6p478dJ" target="_blank">
-    <img src="https://i.postimg.cc/yYdgHF50/IMG-20251216-WA0038.jpg" alt="IMG-20251216-WA0038">
-  </a>
+<section id="livro">
+  <h2>Livro Completo</h2>
 
-  <a href="https://postimg.cc/w7YgR8kW" target="_blank">
-    <img src="https://i.postimg.cc/yYkd573z/IMG-20251216-WA0039.jpg" alt="IMG-20251216-WA0039">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/c6p478dJ" target="_blank">
+      <img src="https://i.postimg.cc/yYdgHF50/IMG-20251216-WA0038.jpg" alt="Página 1">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/kBPqR3yh" target="_blank">
-    <img src="https://i.postimg.cc/wT7vP9RH/IMG-20251216-WA0040.jpg" alt="IMG-20251216-WA0040">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/w7YgR8kW" target="_blank">
+      <img src="https://i.postimg.cc/yYkd573z/IMG-20251216-WA0039.jpg" alt="Página 2">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/Xp64BSgs" target="_blank">
-    <img src="https://i.postimg.cc/PrPxcdvn/IMG-20251216-WA0041.jpg" alt="IMG-20251216-WA0041">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/kBPqR3yh" target="_blank">
+      <img src="https://i.postimg.cc/wT7vP9RH/IMG-20251216-WA0040.jpg" alt="Página 3">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/8sMVSXVF" target="_blank">
-    <img src="https://i.postimg.cc/zDPDT4tk/IMG-20251216-WA0042.jpg" alt="IMG-20251216-WA0042">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/Xp64BSgs" target="_blank">
+      <img src="https://i.postimg.cc/PrPxcdvn/IMG-20251216-WA0041.jpg" alt="Página 4">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/BXf4P9C7" target="_blank">
-    <img src="https://i.postimg.cc/5N60GfQJ/IMG-20251216-WA0043.jpg" alt="IMG-20251216-WA0043">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/8sMVSXVF" target="_blank">
+      <img src="https://i.postimg.cc/zDPDT4tk/IMG-20251216-WA0042.jpg" alt="Página 5">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/ykKCYhV5" target="_blank">
-    <img src="https://i.postimg.cc/bNDygL4z/IMG-20251216-WA0044.jpg" alt="IMG-20251216-WA0044">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/BXf4P9C7" target="_blank">
+      <img src="https://i.postimg.cc/5N60GfQJ/IMG-20251216-WA0043.jpg" alt="Página 6">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/23hfD9fh" target="_blank">
-    <img src="https://i.postimg.cc/v8S85Cqq/IMG-20251216-WA0045.jpg" alt="IMG-20251216-WA0045">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/ykKCYhV5" target="_blank">
+      <img src="https://i.postimg.cc/bNDygL4z/IMG-20251216-WA0044.jpg" alt="Página 7">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/ZCmzKPTQ" target="_blank">
-    <img src="https://i.postimg.cc/5NY4gpDf/IMG-20251216-WA0046.jpg" alt="IMG-20251216-WA0046">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/23hfD9fh" target="_blank">
+      <img src="https://i.postimg.cc/v8S85Cqq/IMG-20251216-WA0045.jpg" alt="Página 8">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/Wh7LDDz2" target="_blank">
-    <img src="https://i.postimg.cc/8P210MVr/IMG-20251216-WA0047.jpg" alt="IMG-20251216-WA0047">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/ZCmzKPTQ" target="_blank">
+      <img src="https://i.postimg.cc/5NY4gpDf/IMG-20251216-WA0046.jpg" alt="Página 9">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/ZCLt99RX" target="_blank">
-    <img src="https://i.postimg.cc/gkCYT8Pc/IMG-20251216-WA0048.jpg" alt="IMG-20251216-WA0048">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/Wh7LDDz2" target="_blank">
+      <img src="https://i.postimg.cc/8P210MVr/IMG-20251216-WA0047.jpg" alt="Página 10">
+    </a>
+  </div>
 
-  <a href="https://postimg.cc/685sC948" target="_blank">
-    <img src="https://i.postimg.cc/3x2K5NKF/IMG-20251216-WA0049.jpg" alt="IMG-20251216-WA0049">
-  </a>
+  <div class="pagina">
+    <a href="https://postimg.cc/ZCLt99RX" target="_blank">
+      <img src="https://i.postimg.cc/gkCYT8Pc/IMG-20251216-WA0048.jpg" alt="Página 11">
+    </a>
+  </div>
 
-</div>
+  <div class="pagina">
+    <a href="https://postimg.cc/685sC948" target="_blank">
+      <img src="https://i.postimg.cc/3x2K5NKF/IMG-20251216-WA0049.jpg" alt="Página 12">
+    </a>
+  </div>
+
+</section>
+
+<footer>
+  © 2025 • ELIMS • Autor: Luiz Felipe • Leitura online
+</footer>
 
 </body>
-</html>
+      </html>
+      
