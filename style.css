@@ -1,67 +1,88 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background: #0f0f0f;
-  color: #fff;
+  margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #120018;
+  color: #ffffff;
 }
 
 /* TOPO */
 header {
-  background: linear-gradient(135deg, #7b2cbf, #9d4edd);
-  padding: 30px;
   text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #5e2b97, #3a0a63);
 }
 
 header h1 {
-  font-size: 36px;
+  font-size: 48px;
+  margin: 0;
 }
 
 header p {
+  font-size: 18px;
   opacity: 0.9;
+  margin: 5px 0;
 }
 
-/* GALERIA TIPO LEITOR */
-.galeria {
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #ffffff;
+  color: #5e2b97;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+/* MENU */
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #1a0026;
+  padding: 12px;
+  text-align: center;
+  z-index: 10;
+}
+
+nav a {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* CONTEÚDO */
+section {
   max-width: 900px;
-  margin: 30px auto;
-  padding: 10px;
+  margin: auto;
+  padding: 30px 15px;
 }
 
-/* IMAGENS GRANDES */
-.galeria img {
-  width: 100%;
-  height: auto;
+section h2 {
+  text-align: center;
   margin-bottom: 25px;
-  border-radius: 12px;
+}
+
+/* PÁGINAS DO LIVRO */
+.pagina {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.pagina img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
   cursor: zoom-in;
-  image-rendering: auto;
 }
 
-/* VISUALIZADOR FULL */
-#viewer {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.95);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-#viewer img {
-  max-width: 95%;
-  max-height: 95%;
-}
-
-#close {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 32px;
-  cursor: pointer;
+/* RODAPÉ */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a0026;
+  font-size: 14px;
+  opacity: 0.85;
 }
