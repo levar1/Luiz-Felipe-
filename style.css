@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* TOPO */
+header {
+  background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+  padding: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 36px;
+}
+
+header p {
+  opacity: 0.9;
+}
+
+/* GALERIA TIPO LEITOR */
+.galeria {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+/* IMAGENS GRANDES */
+.galeria img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  cursor: zoom-in;
+  image-rendering: auto;
+}
+
+/* VISUALIZADOR FULL */
+#viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#viewer img {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  cursor: pointer;
+}
