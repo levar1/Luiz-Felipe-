@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ELIMS – Leitura Digital</title>
+  <title>Livro em desenvolvimento</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div id="progresso"></div>
+
 <header>
-  <span>ELIMS – Luiz Felipe</span>
+  <span>Livro em desenvolvimento</span>
   <div class="acoes">
     <button onclick="toggleMenu()">☰</button>
     <button onclick="toggleDarkMode()">🌙</button>
@@ -17,26 +19,24 @@
   </div>
 </header>
 
+<div class="status">
+  📢 Livro em andamento — novas páginas em breve
+</div>
+
 <!-- MENU LATERAL -->
 <aside id="menu">
   <h3>Páginas</h3>
-  <ul>
-    <li onclick="irPagina(1)">Página 1</li>
-    <li onclick="irPagina(2)">Página 2</li>
-    <li onclick="irPagina(3)">Página 3</li>
-    <li onclick="irPagina(4)">Página 4</li>
-    <li onclick="irPagina(5)">Página 5</li>
-    <li onclick="irPagina(6)">Página 6</li>
-    <li onclick="irPagina(7)">Página 7</li>
-    <li onclick="irPagina(8)">Página 8</li>
-    <li onclick="irPagina(9)">Página 9</li>
-    <li onclick="irPagina(10)">Página 10</li>
-    <li onclick="irPagina(11)">Página 11</li>
-    <li onclick="irPagina(12)">Página 12</li>
-  </ul>
+  <ul id="menuPaginas"></ul>
 </aside>
 
 <div class="leitor" id="leitor">
+
+  <!-- CAPA -->
+  <div class="capa">
+    <h1>Livro em Desenvolvimento</h1>
+    <p>Leitura digital interativa</p>
+    <p class="aviso">📖 Novos capítulos em breve</p>
+  </div>
 
   <!-- PÁGINAS -->
   <div class="pagina"><span>Página 1</span><img src="https://i.postimg.cc/yYdgHF50/IMG-20251216-WA0038.jpg"></div>
@@ -52,14 +52,18 @@
   <div class="pagina"><span>Página 11</span><img src="https://i.postimg.cc/gkCYT8Pc/IMG-20251216-WA0048.jpg"></div>
   <div class="pagina"><span>Página 12</span><img src="https://i.postimg.cc/3x2K5NKF/IMG-20251216-WA0049.jpg"></div>
 
+  <!-- EM BREVE -->
+  <div class="pagina em-breve">
+    <h2>📖 Continuação em desenvolvimento</h2>
+    <p>Novas páginas serão adicionadas em breve.</p>
+    <p>Acompanhe as atualizações.</p>
+  </div>
 </div>
 
-<!-- CONTADOR -->
 <div class="contador">
   Página <span id="atual">1</span> de <span id="total">12</span>
 </div>
 
-<!-- BOTÃO TOPO -->
 <button id="topo" onclick="voltarTopo()">⬆</button>
 
 <script src="script.js"></script>
