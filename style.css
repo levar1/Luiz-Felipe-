@@ -1,74 +1,120 @@
+:root {
+  --fundo: #f2f2f2;
+  --pagina: #ffffff;
+  --texto: #000;
+  --roxo: #6a1b9a;
+}
+
+body.dark {
+  --fundo: #121212;
+  --pagina: #1e1e1e;
+  --texto: #ffffff;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #120018;
-  color: #ffffff;
+  background: var(--fundo);
+  color: var(--texto);
 }
 
+/* HEADER */
 header {
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #5e2b97, #3a0a63);
-}
-
-header h1 {
-  font-size: 48px;
-  margin: 0;
-}
-
-header p {
-  font-size: 18px;
-  margin: 6px 0;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
-  background-color: #ffffff;
-  color: #5e2b97;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background-color: #1a0026;
+  width: 100%;
+  background: var(--pagina);
   padding: 12px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  z-index: 10;
 }
 
-nav a {
-  color: #ffffff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
+.acoes button {
+  margin-left: 6px;
+  background: var(--roxo);
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
 }
 
-section {
+/* MENU */
+aside {
+  position: fixed;
+  left: -220px;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: var(--pagina);
+  box-shadow: 2px 0 8px rgba(0,0,0,.3);
+  padding: 15px;
+  transition: 0.3s;
+  z-index: 20;
+}
+
+aside.active {
+  left: 0;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside li {
+  padding: 8px;
+  cursor: pointer;
+  color: var(--roxo);
+}
+
+/* LEITOR */
+.leitor {
   max-width: 900px;
-  margin: auto;
-  padding: 30px 15px;
+  margin: 90px auto 40px;
+  background: var(--pagina);
+  padding: 20px;
 }
 
 .pagina {
-  margin-bottom: 35px;
+  margin-bottom: 50px;
   text-align: center;
+}
+
+.pagina span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--roxo);
 }
 
 .pagina img {
   width: 100%;
-  max-width: 900px;
+  max-width: 850px;
   height: auto;
-  border-radius: 6px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  cursor: zoom-in;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #1a0026;
-  font-size: 14px;
+.pagina.zoom img {
+  transform: scale(1.7);
+  cursor: zoom-out;
 }
+
+/* CONTADOR */
+.contador {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* BOTÃO TOPO */
+#topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--roxo);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  display: none;
+  }
