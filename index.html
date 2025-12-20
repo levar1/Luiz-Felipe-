@@ -3,51 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ELIMS – Leitura Online</title>
-
-  <meta name="description" content="Livro ELIMS completo para leitura online. Autor: Luiz Felipe">
-  <meta name="keywords" content="ELIMS, livro, leitura online, livro digital">
-  <meta name="author" content="Luiz Felipe">
-
+  <title>ELIMS – Leitura Digital</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header id="inicio">
-  <h1>ELIMS</h1>
-  <p>Autor: Luiz Felipe</p>
-  <p>Leitura online • Livro digital</p>
-  <a href="#livro" class="btn">📖 Ler agora</a>
+<header>
+  <span>ELIMS – Luiz Felipe</span>
+  <div class="acoes">
+    <button onclick="toggleMenu()">☰</button>
+    <button onclick="toggleDarkMode()">🌙</button>
+    <button onclick="toggleFullScreen()">⛶</button>
+  </div>
 </header>
 
-<nav>
-  <a href="#inicio">Início</a>
-  <a href="#livro">Livro</a>
-</nav>
+<!-- MENU LATERAL -->
+<aside id="menu">
+  <h3>Páginas</h3>
+  <ul>
+    <li onclick="irPagina(1)">Página 1</li>
+    <li onclick="irPagina(2)">Página 2</li>
+    <li onclick="irPagina(3)">Página 3</li>
+    <li onclick="irPagina(4)">Página 4</li>
+    <li onclick="irPagina(5)">Página 5</li>
+    <li onclick="irPagina(6)">Página 6</li>
+    <li onclick="irPagina(7)">Página 7</li>
+    <li onclick="irPagina(8)">Página 8</li>
+    <li onclick="irPagina(9)">Página 9</li>
+    <li onclick="irPagina(10)">Página 10</li>
+    <li onclick="irPagina(11)">Página 11</li>
+    <li onclick="irPagina(12)">Página 12</li>
+  </ul>
+</aside>
 
-<section id="livro">
-  <h2>Livro Completo</h2>
+<div class="leitor" id="leitor">
 
-  <div class="pagina"><img src="https://i.postimg.cc/yYdgHF50/IMG-20251216-WA0038.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/yYkd573z/IMG-20251216-WA0039.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/wT7vP9RH/IMG-20251216-WA0040.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/PrPxcdvn/IMG-20251216-WA0041.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/zDPDT4tk/IMG-20251216-WA0042.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/5N60GfQJ/IMG-20251216-WA0043.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/bNDygL4z/IMG-20251216-WA0044.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/v8S85Cqq/IMG-20251216-WA0045.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/5NY4gpDf/IMG-20251216-WA0046.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/8P210MVr/IMG-20251216-WA0047.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/gkCYT8Pc/IMG-20251216-WA0048.jpg"></div>
-  <div class="pagina"><img src="https://i.postimg.cc/3x2K5NKF/IMG-20251216-WA0049.jpg"></div>
+  <!-- PÁGINAS -->
+  <div class="pagina"><span>Página 1</span><img src="https://i.postimg.cc/yYdgHF50/IMG-20251216-WA0038.jpg"></div>
+  <div class="pagina"><span>Página 2</span><img src="https://i.postimg.cc/yYkd573z/IMG-20251216-WA0039.jpg"></div>
+  <div class="pagina"><span>Página 3</span><img src="https://i.postimg.cc/wT7vP9RH/IMG-20251216-WA0040.jpg"></div>
+  <div class="pagina"><span>Página 4</span><img src="https://i.postimg.cc/PrPxcdvn/IMG-20251216-WA0041.jpg"></div>
+  <div class="pagina"><span>Página 5</span><img src="https://i.postimg.cc/zDPDT4tk/IMG-20251216-WA0042.jpg"></div>
+  <div class="pagina"><span>Página 6</span><img src="https://i.postimg.cc/5N60GfQJ/IMG-20251216-WA0043.jpg"></div>
+  <div class="pagina"><span>Página 7</span><img src="https://i.postimg.cc/bNDygL4z/IMG-20251216-WA0044.jpg"></div>
+  <div class="pagina"><span>Página 8</span><img src="https://i.postimg.cc/v8S85Cqq/IMG-20251216-WA0045.jpg"></div>
+  <div class="pagina"><span>Página 9</span><img src="https://i.postimg.cc/5NY4gpDf/IMG-20251216-WA0046.jpg"></div>
+  <div class="pagina"><span>Página 10</span><img src="https://i.postimg.cc/8P210MVr/IMG-20251216-WA0047.jpg"></div>
+  <div class="pagina"><span>Página 11</span><img src="https://i.postimg.cc/gkCYT8Pc/IMG-20251216-WA0048.jpg"></div>
+  <div class="pagina"><span>Página 12</span><img src="https://i.postimg.cc/3x2K5NKF/IMG-20251216-WA0049.jpg"></div>
 
-</section>
+</div>
 
-<footer>
-  © 2025 • ELIMS • Autor: Luiz Felipe • Leitura online
-</footer>
+<!-- CONTADOR -->
+<div class="contador">
+  Página <span id="atual">1</span> de <span id="total">12</span>
+</div>
+
+<!-- BOTÃO TOPO -->
+<button id="topo" onclick="voltarTopo()">⬆</button>
 
 <script src="script.js"></script>
 </body>
