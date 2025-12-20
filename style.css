@@ -18,6 +18,17 @@ body {
   color: var(--texto);
 }
 
+/* PROGRESSO */
+#progresso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--roxo);
+  width: 0%;
+  z-index: 30;
+}
+
 /* HEADER */
 header {
   position: fixed;
@@ -38,6 +49,16 @@ header {
   border: none;
   padding: 6px 10px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+/* STATUS */
+.status {
+  margin-top: 60px;
+  text-align: center;
+  background: #eee;
+  padding: 8px;
+  font-size: 14px;
 }
 
 /* MENU */
@@ -54,9 +75,7 @@ aside {
   z-index: 20;
 }
 
-aside.active {
-  left: 0;
-}
+aside.active { left: 0; }
 
 aside ul {
   list-style: none;
@@ -75,7 +94,16 @@ aside li {
   margin: 90px auto 40px;
   background: var(--pagina);
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
+
+.capa {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.capa h1 { font-size: 28px; color: var(--roxo); }
+.capa .aviso { opacity: 0.7; }
 
 .pagina {
   margin-bottom: 50px;
@@ -86,6 +114,7 @@ aside li {
   display: block;
   margin-bottom: 8px;
   color: var(--roxo);
+  font-weight: bold;
 }
 
 .pagina img {
@@ -93,12 +122,21 @@ aside li {
   max-width: 850px;
   height: auto;
   cursor: zoom-in;
+  transition: transform 0.3s ease;
 }
 
 .pagina.zoom img {
   transform: scale(1.7);
   cursor: zoom-out;
 }
+
+/* EM BREVE */
+.em-breve {
+  text-align: center;
+  padding: 60px 20px;
+  opacity: 0.7;
+}
+.em-breve h2 { color: var(--roxo); }
 
 /* CONTADOR */
 .contador {
@@ -117,4 +155,4 @@ aside li {
   padding: 10px;
   border-radius: 50%;
   display: none;
-  }
+}
