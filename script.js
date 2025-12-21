@@ -1,71 +1,73 @@
-const paginas = document.querySelectorAll(".pagina");
-document.getElementById("total").textContent = paginas.length;
-
-// 🌙 Modo noturno
+// Dark Mode
 function toggleDarkMode() {
-  document.body.classList.toggle("dark");
+  document.body.classList.toggle('dark');
+  localStorage.setItem('darkMode', document.body.classList.contains('dark'));
 }
+if (localStorage.getItem('darkMode') === 'true') document.body.classList.add('dark');
 
-// ⛶ Tela cheia
-function toggleFullScreen() {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-  } else {
-    document.exitFullscreen();
-  }
-}
-
-// ☰ Menu lateral
+// Menu Lateral
 function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
+  document.getElementById('menu').classList.toggle('aberto');
+  gerarThumbnails();
 }
 
-// 🔍 Zoom
-paginas.forEach(p => p.addEventListener("click", () => p.classList.toggle("zoom")));
-
-// 📑 Ir para página
-function irPagina(n) {
-  paginas[n - 1].scrollIntoView({ behavior: "smooth" });
-}
-
-// 🧭 Numeração automática
-window.addEventListener("scroll", () => {
-  let atual = 1;
-  paginas.forEach((p, i) => {
-    if (p.getBoundingClientRect().top <= window.innerHeight / 2) atual = i + 1;
+// Gerar thumbnails no menu
+function gerarThumbnails() {
+  const menu = document.getElementById('menuPaginas');
+  menu.innerHTML = '';
+  const paginas = document.querySelectorAll('.pagina.vertical img');
+  paginas.forEach((img, i) => {
+    const li = document.createElement('li');
+    const thumb = document.createElement('img');
+    thumb.src = img.src;
+    thumb.alt = img.alt || `Página ${i+1}`;
+    thumb.onclick = () => { img.scrollIntoView({behavior:'smooth'}); toggleMenu(); };
+    li.appendChild(thumb);
+    menu.appendChild(li);
   });
-  document.getElementById("atual").textContent = atual;
-  document.getElementById("topo").style.display = window.scrollY > 300 ? "block" : "none";
-});
-
-// 🔝 Voltar ao topo
-function voltarTopo() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// 📊 Barra de progresso
-window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const altura = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const progresso = (scrollTop / altura) * 100;
-  document.getElementById("progresso").style.width = progresso + "%";
+// Barra de progresso
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.querySelector('#progresso .barra').style.width = scrolled + '%';
+
+  document.getElementById('topo').style.display = winScroll > 500 ? 'block' : 'none';
 });
 
-// 💾 Salvar posição da leitura
-window.addEventListener("scroll", () => {
-  localStorage.setItem("leituraPosicao", window.scrollY);
-});
-window.addEventListener("load", () => {
-  const posicao = localStorage.getItem("leituraPosicao");
-  if (posicao) window.scrollTo(0, posicao);
+// Zoom nas imagens (toque duplo ou pinça)
+document.querySelectorAll('.pagina.vertical img').forEach(img => {
+  img.addEventListener('click', () => {
+    img.classList.toggle('zoomed');
+  });
 });
 
-// 📚 Criar menu automático
-const menu = document.getElementById("menuPaginas");
-paginas.forEach((_, i) => {
-  const li = document.createElement("li");
-  li.textContent = "Página " + (i + 1);
-  li.onclick = () => irPagina(i + 1);
-  menu.appendChild(li);
+// Navegação por toque nas laterais
+function scrollProxima() {
+  window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' });
+}
+function scrollAnterior() {
+  window.scrollBy({ top: -window.innerHeight * 0.9, behavior: 'smooth' });
+}
+
+// Teclas ← →
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') scrollProxima();
+  if (e.key === 'ArrowLeft') scrollAnterior();
 });
-  
+
+// Fullscreen
+function toggleFullScreen() {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+}
+
+// Voltar ao topo
+function voltarTopo() {
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// Inicializar
+gerarThumbnails();
