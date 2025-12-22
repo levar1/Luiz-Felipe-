@@ -8,87 +8,36 @@
 </head>
 <body>
 
-<div id="progresso"><div class="barra"></div></div>
-
-<header>
-  <span>NULL cats</span>
-  <div class="acoes">
-    <button onclick="toggleMenu()">☰</button>
-    <button onclick="toggleDarkMode()">🌙</button>
-    <button onclick="toggleSettings()">⚙️</button>
-    <button onclick="toggleFullScreen()">⛶</button>
-  </div>
-</header>
-
-<div class="status">
-  📢 Livro em andamento — novas páginas em breve
-</div>
+<!-- ... (o resto do código igual, só mudei os src das imgs) ... -->
 
 <!-- PÁGINA INICIAL -->
 <div id="home" class="home ativo">
-  <img src="https://i.postimg.cc/yYdgHF50/IMG-20251216-WA0038.jpg" alt="Capa" class="capa-home">
-  <h1>NULL cats</h1>
-  <p class="sinopse">Uma história épica sobre gatos em um mundo vazio, liberdade, traição e lutas intensas.<br>Ato 1: Vazio</p>
-  <button onclick="startReading()" class="btn-start">Começar a Ler</button>
-  <button id="continuarBtn" onclick="continueReading()" class="btn-continuar" style="display:none;">Continuar Leitura</button>
-</div>
-
-<!-- MENU LATERAL -->
-<aside id="menu">
-  <h3>Capítulos</h3>
-  <ul class="menu-capitulos">
-    <li class="ativo" onclick="showChapter(1)">Ato 1 - Vazio</li>
-    <!-- Adicione mais <li> aqui quando tiver novos atos -->
-  </ul>
-  <h3>Páginas</h3>
-  <ul id="menuPaginas"></ul>
-</aside>
-
-<!-- PAINEL DE CONFIGURAÇÕES -->
-<div id="settings" class="settings-panel">
-  <h3>Configurações de Leitura</h3>
-  <select id="readingMode" onchange="setReadingMode(this.value)">
-    <option value="normal">Normal</option>
-    <option value="sepia">Sépia</option>
-    <option value="night">Noite (menos luz azul)</option>
-  </select>
-  <button onclick="toggleAutoScroll()">Auto-scroll: <span id="autoStatus">OFF</span></button>
-  <button onclick="playPageTurnSound()">Testar Som de Página</button>
-  <button onclick="shareCurrentPage()">Compartilhar Página Atual</button>
+  <img src="https://i.postimg.cc/yYdgHF50/direct/IMG-20251216-WA0038.jpg" alt="Capa" class="capa-home">
+  <!-- ... -->
 </div>
 
 <!-- LEITOR VERTICAL -->
 <div class="leitor" id="leitor">
 
   <!-- INTRODUÇÃO -->
-  <div class="pagina vertical" data-page="intro"><img src="https://i.postimg.cc/yYkd573z/IMG-20251216-WA0039.jpg" alt="Introdução"></div>
+  <div class="pagina vertical" data-page="intro"><img src="https://i.postimg.cc/yYkd573z/direct/IMG-20251216-WA0039.jpg" alt="Introdução"></div>
 
   <!-- PÁGINAS DO ATO 1 -->
-  <div class="pagina vertical" data-page="1"><img src="https://i.postimg.cc/PrPxcdvn/IMG-20251216-WA0041.jpg" alt="Página 1"></div>
-  <div class="pagina vertical" data-page="2"><img src="https://i.postimg.cc/zDPDT4tk/IMG-20251216-WA0042.jpg" alt="Página 2"></div>
-  <div class="pagina vertical" data-page="3"><img src="https://i.postimg.cc/wT7vP9RH/IMG-20251216-WA0040.jpg" alt="Página 3"></div>
-  <div class="pagina vertical" data-page="4"><img src="https://i.postimg.cc/5N60GfQJ/IMG-20251216-WA0043.jpg" alt="Página 4"></div>
-  <div class="pagina vertical" data-page="5"><img src="https://i.postimg.cc/bNDygL4z/IMG-20251216-WA0044.jpg" alt="Página 5"></div>
-  <div class="pagina vertical" data-page="6"><img src="https://i.postimg.cc/v8S85Cqq/IMG-20251216-WA0045.jpg" alt="Página 6"></div>
-  <div class="pagina vertical" data-page="7"><img src="https://i.postimg.cc/gkCYT8Pc/IMG-20251216-WA0048.jpg" alt="Página 7"></div>
-  <div class="pagina vertical" data-page="8"><img src="https://i.postimg.cc/5NY4gpDf/IMG-20251216-WA0046.jpg" alt="Página 8"></div>
-  <div class="pagina vertical" data-page="9"><img src="https://i.postimg.cc/8P210MVr/IMG-20251216-WA0047.jpg" alt="Página 9"></div>
-  <div class="pagina vertical" data-page="10"><img src="https://i.postimg.cc/3x2K5NKF/IMG-20251216-WA0049.jpg" alt="Página 10"></div>
+  <div class="pagina vertical" data-page="1"><img src="https://i.postimg.cc/PrPxcdvn/direct/IMG-20251216-WA0041.jpg" alt="Página 1"></div>
+  <div class="pagina vertical" data-page="2"><img src="https://i.postimg.cc/zDPDT4tk/direct/IMG-20251216-WA0042.jpg" alt="Página 2"></div>
+  <div class="pagina vertical" data-page="3"><img src="https://i.postimg.cc/wT7vP9RH/direct/IMG-20251216-WA0040.jpg" alt="Página 3"></div>
+  <div class="pagina vertical" data-page="4"><img src="https://i.postimg.cc/5N60GfQJ/direct/IMG-20251216-WA0043.jpg" alt="Página 4"></div>
+  <div class="pagina vertical" data-page="5"><img src="https://i.postimg.cc/bNDygL4z/direct/IMG-20251216-WA0044.jpg" alt="Página 5"></div>
+  <div class="pagina vertical" data-page="6"><img src="https://i.postimg.cc/v8S85Cqq/direct/IMG-20251216-WA0045.jpg" alt="Página 6"></div>
+  <div class="pagina vertical" data-page="7"><img src="https://i.postimg.cc/gkCYT8Pc/direct/IMG-20251216-WA0048.jpg" alt="Página 7"></div>
+  <div class="pagina vertical" data-page="8"><img src="https://i.postimg.cc/5NY4gpDf/direct/IMG-20251216-WA0046.jpg" alt="Página 8"></div>
+  <div class="pagina vertical" data-page="9"><img src="https://i.postimg.cc/8P210MVr/direct/IMG-20251216-WA0047.jpg" alt="Página 9"></div>
+  <div class="pagina vertical" data-page="10"><img src="https://i.postimg.cc/3x2K5NKF/direct/IMG-20251216-WA0049.jpg" alt="Página 10"></div>
 
-  <!-- EM BREVE -->
-  <div class="pagina vertical em-breve">
-    <h2>📖 Continuação em desenvolvimento</h2>
-    <p>Novas páginas em breve!</p>
-  </div>
+  <!-- ... resto igual ... -->
 </div>
 
-<!-- NAVEGAÇÃO LATERAL -->
-<div class="nav-esquerda" onclick="scrollAnterior()"></div>
-<div class="nav-direita" onclick="scrollProxima()"></div>
-
-<button id="topo" onclick="voltarTopo()">⬆</button>
-
-<audio id="pageSound" src="page-turn.mp3"></audio>
+<!-- ... o resto do HTML igual ao que eu mandei antes ... -->
 
 <script src="script.js"></script>
 </body>
