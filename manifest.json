@@ -1,9 +1,8 @@
-{
-  "name": "NULL cats LF",
+"name": "NULL cats LF",
   "short_name": "NULL cats LF",
   "description": "Quadrinho NULL cats por Luiz Felipe",
   "start_url": "/Luiz-Felipe-/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#000000",
   "theme_color": "#e91e63",
   "icons": [
@@ -18,5 +17,6 @@
       "sizes": "192x192",
       "type": "image/jpg"
     }
-  ]
+  ],
+  "lang": "pt"
 }
