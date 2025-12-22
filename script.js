@@ -1,25 +1,26 @@
 // Dark Mode
 if (localStorage.getItem('darkMode') === 'true') document.body.classList.add('dark');
-
 function toggleDarkMode() {
   document.body.classList.toggle('dark');
   localStorage.setItem('darkMode', document.body.classList.contains('dark'));
 }
 
-// Menu e Settings
+// Menus com overlay
 function toggleMenu() {
   document.getElementById('menu').classList.toggle('aberto');
-  gerarThumbnails();
+  document.querySelector('.menu-overlay').classList.toggle('aberto');
+  if (document.getElementById('menu').classList.contains('aberto')) gerarThumbnails();
 }
 function toggleSettings() {
   document.getElementById('settings').classList.toggle('aberto');
+  document.querySelector('.settings-overlay').classList.toggle('aberto');
 }
 
 // Thumbnails
 function gerarThumbnails() {
   const menu = document.getElementById('menuPaginas');
   menu.innerHTML = '';
-  const paginas = document.querySelectorAll('.pagina.vertical img');
+  const paginas = document.querySelectorAll('.leitor .pagina.vertical img');
   paginas.forEach((img, i) => {
     const li = document.createElement('li');
     const thumb = document.createElement('img');
@@ -35,7 +36,7 @@ function gerarThumbnails() {
 
 // Página inicial
 function startReading() {
-  document.getElementById('home').style.display = 'none';
+  document.getElementById('home').classList.remove('ativo');
   document.getElementById('leitor').style.display = 'flex';
   gerarThumbnails();
   window.scrollTo(0, 0);
@@ -44,17 +45,13 @@ function startReading() {
 // Continuar leitura
 function continueReading() {
   startReading();
-  const last = localStorage.getItem('lastPage');
-  if (last) {
-    const target = document.querySelector(`[data-page="${last}"]`);
-    if (target) target.scrollIntoView({behavior:'smooth'});
-  }
+  const last = localStorage.getItem('lastPage') || 'intro';
+  const target = document.querySelector(`[data-page="${last}"]`);
+  if (target) target.scrollIntoView({behavior:'smooth'});
 }
-if (localStorage.getItem('lastPage')) {
-  document.getElementById('continuarBtn').style.display = 'block';
-}
+if (localStorage.getItem('lastPage')) document.getElementById('continuarBtn').style.display = 'block';
 
-// Salvar última página
+// Salvar última página + progresso
 window.addEventListener('scroll', () => {
   const pages = document.querySelectorAll('.pagina.vertical');
   pages.forEach(page => {
@@ -63,16 +60,13 @@ window.addEventListener('scroll', () => {
       localStorage.setItem('lastPage', page.dataset.page || 'intro');
     }
   });
-  updateProgress();
-});
 
-function updateProgress() {
   const winScroll = document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
   document.querySelector('#progresso .barra').style.width = scrolled + '%';
   document.getElementById('topo').style.display = winScroll > 800 ? 'block' : 'none';
-}
+});
 
 // Modos de leitura
 function setReadingMode(mode) {
@@ -89,7 +83,7 @@ function toggleAutoScroll() {
     autoInterval = null;
     document.getElementById('autoStatus').textContent = 'OFF';
   } else {
-    autoInterval = setInterval(() => window.scrollBy(0, 1), 30);
+    autoInterval = setInterval(() => window.scrollBy(0, 2), 40);
     document.getElementById('autoStatus').textContent = 'ON';
   }
 }
@@ -100,7 +94,8 @@ function scrollAnterior() { window.scrollBy({ top: -window.innerHeight * 0.9, be
 
 // Compartilhar
 function shareCurrentPage() {
-  navigator.share ? navigator.share({url: location.href, title: 'NULL cats'}) : alert('Copie o link: ' + location.href);
+  const url = location.href;
+  navigator.share ? navigator.share({url, title: 'NULL cats'}) : prompt('Copie o link:', url);
 }
 
 // Fullscreen e topo
@@ -110,5 +105,6 @@ function toggleFullScreen() {
 function voltarTopo() { window.scrollTo({top:0, behavior:'smooth'}); }
 
 // Inicializar
-window.addEventListener('load', updateProgress);
-window.addEventListener('scroll', updateProgress);
+window.addEventListener('load', () => {
+  if (localStorage.getItem('readingMode')) setReadingMode(localStorage.getItem('readingMode'));
+});
