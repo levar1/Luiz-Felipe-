@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NULL cats LF</title>
+  <title>Deixar Feedback - NULL cats LF</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#e91e63">
 </head>
 <body>
@@ -13,118 +12,31 @@
 <div id="progresso"><div class="barra"></div></div>
 
 <header>
-  <span>NULL cats LF</span>
+  <span>NULL cats LF - Deixar Feedback</span>
   <div class="acoes">
-    <button onclick="toggleMenu()">☰</button>
     <button onclick="toggleDarkMode()">🌙</button>
-    <button onclick="toggleSettings()">⚙️</button>
-    <button onclick="window.open('feedback.html', '_blank')">💬 Deixar Feedback</button> <!-- ABRE ABA NOVA PRA ENVIAR -->
-    <button onclick="toggleFullScreen()">⛶</button>
+    <button onclick="window.close()">✖ Fechar</button>
   </div>
 </header>
 
 <div class="status">
-  📢 Livro em andamento — novas páginas em breve
+  📢 Obrigado por deixar sua opinião!
 </div>
 
-<!-- OVERLAYS -->
-<div class="menu-overlay" onclick="toggleMenu()"></div>
-<div class="settings-overlay" onclick="toggleSettings()"></div>
-
-<!-- PÁGINA INICIAL -->
-<div id="home" class="home ativo">
-  <img src="https://i.postimg.cc/yYdgHF50/direct/IMG-20251216-WA0038.jpg" alt="Capa" class="capa-home">
-  <h1>NULL cats LF</h1>
-  <p class="sinopse">Uma história épica sobre gatos em um mundo vazio, liberdade, traição e lutas intensas.<br>Ato 1: Vazio - por Luiz Felipe</p>
-  <button onclick="startReading()" class="btn-start">Começar a Ler</button>
-  <button id="continuarBtn" onclick="continueReading()" class="btn-continuar" style="display:none;">Continuar Leitura</button>
+<div class="feedback-container">
+  <h2>Deixe seu feedback!</h2>
+  <p>Escreva sua sugestão ou opinião.<br>Tudo vai pra mim em privado. Eu leio, respondo e aprovo os que quiser pra aparecer no site 😺</p>
+  <div id="cusdis_thread"
+    data-host="https://cusdis.com"
+    data-app-id="79e332b3-501f-4b0f-b103-c3283140e1ff"
+    data-page-id="feedback-nullcats"
+    data-page-url="https://levar1.github.io/Luiz-Felipe-/"
+    data-page-title="Feedback - NULL cats LF"
+    data-theme="auto"
+    data-embed="true">
+  </div>
+  <script async src="https://cusdis.com/js/cusdis.es.js"></script>
 </div>
-
-<!-- MENU LATERAL -->
-<aside id="menu">
-  <button class="fechar-menu" onclick="toggleMenu()">✖</button>
-  <h3>Capítulos</h3>
-  <ul class="menu-capitulos">
-    <li class="ativo">Ato 1 - Vazio</li>
-  </ul>
-  <h3>Páginas</h3>
-  <ul id="menuPaginas"></ul>
-</aside>
-
-<!-- CONFIGURAÇÕES -->
-<div id="settings" class="settings-panel">
-  <button class="fechar-settings" onclick="toggleSettings()">✖</button>
-  <h3>Configurações</h3>
-  <select id="readingMode" onchange="setReadingMode(this.value)">
-    <option value="normal">Normal</option>
-    <option value="sepia">Sépia</option>
-    <option value="night">Noite</option>
-  </select>
-  <button onclick="toggleAutoScroll()">Auto-scroll: <span id="autoStatus">OFF</span></button>
-  <button onclick="shareCurrentPage()">Compartilhar Página</button>
-</div>
-
-<!-- LEITOR -->
-<div class="leitor" id="leitor">
-  <div class="pagina vertical" data-page="intro">
-    <img src="https://i.postimg.cc/yYkd573z/direct/IMG-20251216-WA0039.jpg" alt="Introdução">
-  </div>
-  <div class="pagina vertical" data-page="1">
-    <img src="https://i.postimg.cc/PrPxcdvn/direct/IMG-20251216-WA0041.jpg" alt="Página 1">
-  </div>
-  <div class="pagina vertical" data-page="2">
-    <img src="https://i.postimg.cc/zDPDT4tk/direct/IMG-20251216-WA0042.jpg" alt="Página 2">
-  </div>
-  <div class="pagina vertical" data-page="3">
-    <img src="https://i.postimg.cc/wT7vP9RH/direct/IMG-20251216-WA0040.jpg" alt="Página 3">
-  </div>
-  <div class="pagina vertical" data-page="4">
-    <img src="https://i.postimg.cc/5N60GfQJ/direct/IMG-20251216-WA0043.jpg" alt="Página 4">
-  </div>
-  <div class="pagina vertical" data-page="5">
-    <img src="https://i.postimg.cc/bNDygL4z/direct/IMG-20251216-WA0044.jpg" alt="Página 5">
-  </div>
-  <div class="pagina vertical" data-page="6">
-    <img src="https://i.postimg.cc/v8S85Cqq/direct/IMG-20251216-WA0045.jpg" alt="Página 6">
-  </div>
-  <div class="pagina vertical" data-page="7">
-    <img src="https://i.postimg.cc/gkCYT8Pc/direct/IMG-20251216-WA0048.jpg" alt="Página 7">
-  </div>
-  <div class="pagina vertical" data-page="8">
-    <img src="https://i.postimg.cc/5NY4gpDf/direct/IMG-20251216-WA0046.jpg" alt="Página 8">
-  </div>
-  <div class="pagina vertical" data-page="9">
-    <img src="https://i.postimg.cc/8P210MVr/direct/IMG-20251216-WA0047.jpg" alt="Página 9">
-  </div>
-  <div class="pagina vertical" data-page="10">
-    <img src="https://i.postimg.cc/3x2K5NKF/direct/IMG-20251216-WA0049.jpg" alt="Página 10">
-  </div>
-  <div class="pagina vertical em-breve">
-    <h2>📖 Continuação em desenvolvimento</h2>
-    <p>Novas páginas em breve!</p>
-  </div>
-
-  <!-- COMENTÁRIOS APROVADOS (aparecem no final do leitor) -->
-  <div class="feedback-section">
-    <h2>Comentários da galera</h2>
-    <p>Aqui ficam os feedbacks aprovados! 😺</p>
-    <div id="cusdis_thread"
-      data-host="https://cusdis.com"
-      data-app-id="79e332b3-501f-4b0f-b103-c3283140e1ff"
-      data-page-id="feedback-nullcats"
-      data-page-url="https://levar1.github.io/Luiz-Felipe-/"
-      data-page-title="Feedback - NULL cats LF"
-      data-theme="auto"
-      data-embed="true">
-    </div>
-    <script async src="https://cusdis.com/js/cusdis.es.js"></script>
-  </div>
-</div>
-
-<div class="nav-esquerda" onclick="scrollAnterior()"></div>
-<div class="nav-direita" onclick="scrollProxima()"></div>
-
-<button id="topo" onclick="voltarTopo()">⬆</button>
 
 <script src="script.js"></script>
 <script>
@@ -133,4 +45,4 @@
   }
 </script>
 </body>
-      </html>
+</html>
