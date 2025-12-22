@@ -24,6 +24,10 @@
   📢 Livro em andamento — novas páginas em breve
 </div>
 
+<!-- OVERLAYS PARA CLICAR FORA -->
+<div class="menu-overlay" onclick="toggleMenu()"></div>
+<div class="settings-overlay" onclick="toggleSettings()"></div>
+
 <!-- PÁGINA INICIAL -->
 <div id="home" class="home ativo">
   <img src="https://i.postimg.cc/yYdgHF50/direct/IMG-20251216-WA0038.jpg" alt="Capa" class="capa-home">
@@ -35,6 +39,7 @@
 
 <!-- MENU LATERAL -->
 <aside id="menu">
+  <button class="fechar-menu" onclick="toggleMenu()">✖</button>
   <h3>Capítulos</h3>
   <ul class="menu-capitulos">
     <li class="ativo">Ato 1 - Vazio</li>
@@ -45,6 +50,7 @@
 
 <!-- PAINEL DE CONFIGURAÇÕES -->
 <div id="settings" class="settings-panel">
+  <button class="fechar-settings" onclick="toggleSettings()">✖</button>
   <h3>Configurações</h3>
   <select id="readingMode" onchange="setReadingMode(this.value)">
     <option value="normal">Normal</option>
@@ -55,15 +61,12 @@
   <button onclick="shareCurrentPage()">Compartilhar Página</button>
 </div>
 
-<!-- LEITOR VERTICAL (AQUI AS IMAGENS GRANDES APARECEM) -->
-<div class="leitor" id="leitor" style="display:none;">
-
-  <!-- INTRODUÇÃO -->
+<!-- LEITOR VERTICAL -->
+<div class="leitor" id="leitor">
   <div class="pagina vertical" data-page="intro">
     <img src="https://i.postimg.cc/yYkd573z/direct/IMG-20251216-WA0039.jpg" alt="Introdução">
   </div>
 
-  <!-- PÁGINAS DA HISTÓRIA -->
   <div class="pagina vertical" data-page="1">
     <img src="https://i.postimg.cc/PrPxcdvn/direct/IMG-20251216-WA0041.jpg" alt="Página 1">
   </div>
@@ -95,7 +98,6 @@
     <img src="https://i.postimg.cc/3x2K5NKF/direct/IMG-20251216-WA0049.jpg" alt="Página 10">
   </div>
 
-  <!-- EM BREVE -->
   <div class="pagina vertical em-breve">
     <h2>📖 Continuação em desenvolvimento</h2>
     <p>Novas páginas em breve!</p>
@@ -109,4 +111,4 @@
 
 <script src="script.js"></script>
 </body>
-                                 </html>
+  </html>
