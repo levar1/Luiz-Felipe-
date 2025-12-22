@@ -104,10 +104,11 @@
   </div>
 </div>
 
-<!-- SEÇÃO DE FEEDBACK -->
+<!-- SEÇÃO DE FEEDBACK (com botão pra abrir a caixa de texto) -->
 <div class="feedback-section">
   <h2>O que você achou do NULL cats LF?</h2>
-  <p>Deixe sua nota (1-5 estrelas) e sugestão!<br>Todos os feedbacks vão direto pro meu email privado (ravelsilveiradamacedo@gmail.com). Eu leio tudo, respondo e escolho quais aparecem aqui pra galera ver 😺</p>
+  <p>Deixe sua nota (1-5 estrelas) e sugestão!<br>Todos os feedbacks vão pra mim em privado. Eu leio tudo, respondo e escolho quais aparecem aqui pra galera ver 😺</p>
+  <button class="btn-feedback" onclick="openCusdisForm()">Deixar Feedback</button>
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="79e332b3-501f-4b0f-b103-c3283140e1ff"
@@ -128,6 +129,13 @@
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
+  }
+
+  // Função pra abrir o form de comentário (resolve o problema da caixa não aparecer)
+  function openCusdisForm() {
+    if (window.CUSDIS) {
+      window.CUSDIS.renderTo('cusdis_thread');
+    }
   }
 </script>
 </body>
