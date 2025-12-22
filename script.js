@@ -5,7 +5,7 @@ function toggleDarkMode() {
   localStorage.setItem('darkMode', document.body.classList.contains('dark'));
 }
 
-// Menus com overlay
+// Menus
 function toggleMenu() {
   document.getElementById('menu').classList.toggle('aberto');
   document.querySelector('.menu-overlay').classList.toggle('aberto');
@@ -73,6 +73,7 @@ function setReadingMode(mode) {
   document.body.className = document.body.classList.contains('dark') ? 'dark' : '';
   if (mode !== 'normal') document.body.classList.add(mode);
   localStorage.setItem('readingMode', mode);
+  document.getElementById('readingMode').value = mode;
 }
 
 // Auto-scroll
@@ -95,7 +96,7 @@ function scrollAnterior() { window.scrollBy({ top: -window.innerHeight * 0.9, be
 // Compartilhar
 function shareCurrentPage() {
   const url = location.href;
-  navigator.share ? navigator.share({url, title: 'NULL cats'}) : prompt('Copie o link:', url);
+  navigator.share ? navigator.share({url, title: 'NULL cats LF'}) : prompt('Copie o link:', url);
 }
 
 // Fullscreen e topo
