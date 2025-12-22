@@ -3,62 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback - NULL cats LF</title>
-  <link rel="stylesheet" href="style.css"> <!-- Usa o mesmo CSS do site principal -->
+  <title>Deixar Feedback - NULL cats LF</title>
+  <link rel="stylesheet" href="style.css">
   <meta name="theme-color" content="#e91e63">
-  <style>
-    body { background: #f5f5f5; padding: 20px; }
-    body.dark { background: #000; }
-    .feedback-container {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 40px;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-    body.dark .feedback-container { background: #111; }
-    .feedback-container h2 {
-      color: #e91e63;
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-    .feedback-container p {
-      margin-bottom: 40px;
-      font-size: 1.2em;
-      line-height: 1.6;
-    }
-    .voltar-btn {
-      padding: 15px 40px;
-      font-size: 1.3em;
-      background: #e91e63;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      margin-top: 40px;
-    }
-  </style>
 </head>
 <body>
 
+<div id="progresso"><div class="barra"></div></div>
+
+<header>
+  <span>NULL cats LF - Deixar Feedback</span>
+  <div class="acoes">
+    <button onclick="toggleDarkMode()">🌙</button>
+    <button onclick="window.close()">✖ Fechar</button>
+  </div>
+</header>
+
+<div class="status">
+  📢 Obrigado por deixar sua opinião!
+</div>
+
 <div class="feedback-container">
   <h2>Deixe seu feedback!</h2>
-  <p>Escreva sua sugestão, opinião ou dúvida sobre o NULL cats LF.<br>Todos os feedbacks vão pra mim em privado. Eu leio tudo e respondo 😺</p>
+  <p>Escreva sua sugestão ou opinião.<br>Tudo vai pra mim em privado. Eu leio, respondo e aprovo os que quiser pra aparecer no site 😺</p>
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="79e332b3-501f-4b0f-b103-c3283140e1ff"
     data-page-id="feedback-nullcats"
-    data-page-url="https://levar1.github.io/Luiz-Felipe-/feedback.html"
+    data-page-url="https://levar1.github.io/Luiz-Felipe-/"
     data-page-title="Feedback - NULL cats LF"
     data-theme="auto"
     data-embed="true">
   </div>
   <script async src="https://cusdis.com/js/cusdis.es.js"></script>
-
-  <button class="voltar-btn" onclick="window.location.href='index.html'">Voltar pro quadrinho</button>
 </div>
 
+<script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
 </body>
 </html>
