@@ -45,87 +45,64 @@
 
 <!-- PAINEL DE CONFIGURAÇÕES -->
 <div id="settings" class="settings-panel">
-  <h3>Configurações de Leitura</h3>
+  <h3>Configurações</h3>
   <select id="readingMode" onchange="setReadingMode(this.value)">
     <option value="normal">Normal</option>
     <option value="sepia">Sépia</option>
-    <option value="night">Noite (menos luz azul)</option>
+    <option value="night">Noite</option>
   </select>
   <button onclick="toggleAutoScroll()">Auto-scroll: <span id="autoStatus">OFF</span></button>
-  <button onclick="shareCurrentPage()">Compartilhar Página Atual</button>
+  <button onclick="shareCurrentPage()">Compartilhar Página</button>
 </div>
 
-<!-- LEITOR VERTICAL -->
+<!-- LEITOR -->
 <div class="leitor" id="leitor">
-
-  <!-- INTRODUÇÃO -->
   <div class="pagina vertical" data-page="intro">
-    <span>Introdução</span>
     <img src="https://i.postimg.cc/yYkd573z/direct/IMG-20251216-WA0039.jpg" alt="Introdução">
   </div>
 
-  <!-- PÁGINAS DA HISTÓRIA (ORDEM CORRIGIDA) -->
   <div class="pagina vertical" data-page="1">
-    <span>Página 1</span>
     <img src="https://i.postimg.cc/PrPxcdvn/direct/IMG-20251216-WA0041.jpg" alt="Página 1">
   </div>
   <div class="pagina vertical" data-page="2">
-    <span>Página 2</span>
     <img src="https://i.postimg.cc/zDPDT4tk/direct/IMG-20251216-WA0042.jpg" alt="Página 2">
   </div>
   <div class="pagina vertical" data-page="3">
-    <span>Página 3</span>
     <img src="https://i.postimg.cc/wT7vP9RH/direct/IMG-20251216-WA0040.jpg" alt="Página 3">
   </div>
   <div class="pagina vertical" data-page="4">
-    <span>Página 4</span>
     <img src="https://i.postimg.cc/5N60GfQJ/direct/IMG-20251216-WA0043.jpg" alt="Página 4">
   </div>
   <div class="pagina vertical" data-page="5">
-    <span>Página 5</span>
     <img src="https://i.postimg.cc/bNDygL4z/direct/IMG-20251216-WA0044.jpg" alt="Página 5">
   </div>
   <div class="pagina vertical" data-page="6">
-    <span>Página 6</span>
     <img src="https://i.postimg.cc/v8S85Cqq/direct/IMG-20251216-WA0045.jpg" alt="Página 6">
   </div>
   <div class="pagina vertical" data-page="7">
-    <span>Página 7</span>
     <img src="https://i.postimg.cc/gkCYT8Pc/direct/IMG-20251216-WA0048.jpg" alt="Página 7">
   </div>
   <div class="pagina vertical" data-page="8">
-    <span>Página 8</span>
     <img src="https://i.postimg.cc/5NY4gpDf/direct/IMG-20251216-WA0046.jpg" alt="Página 8">
   </div>
   <div class="pagina vertical" data-page="9">
-    <span>Página 9</span>
     <img src="https://i.postimg.cc/8P210MVr/direct/IMG-20251216-WA0047.jpg" alt="Página 9">
   </div>
   <div class="pagina vertical" data-page="10">
-    <span>Página 10</span>
     <img src="https://i.postimg.cc/3x2K5NKF/direct/IMG-20251216-WA0049.jpg" alt="Página 10">
   </div>
 
-  <!-- EM BREVE -->
   <div class="pagina vertical em-breve">
     <h2>📖 Continuação em desenvolvimento</h2>
-    <p>Novas páginas serão adicionadas em breve.</p>
-    <p>Acompanhe as atualizações.</p>
+    <p>Novas páginas em breve!</p>
   </div>
 </div>
 
-<!-- NAVEGAÇÃO LATERAL -->
 <div class="nav-esquerda" onclick="scrollAnterior()"></div>
 <div class="nav-direita" onclick="scrollProxima()"></div>
 
-<div class="contador">
-  Página <span id="atual">1</span> de <span id="total">12</span>
-</div>
-
 <button id="topo" onclick="voltarTopo()">⬆</button>
-
-<audio id="pageSound" src="page-turn.mp3"></audio>
 
 <script src="script.js"></script>
 </body>
-    </html>
+</html>
