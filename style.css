@@ -45,7 +45,7 @@ body.dark aside#menu, body.dark .settings-panel { background:#111; }
 .menu-overlay, .settings-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; opacity:0; visibility:hidden; transition:opacity 0.3s; }
 .menu-overlay.aberto, .settings-overlay.aberto { opacity:1; visibility:visible; }
 
-.nav-esquerda, .nav-direita { position:fixed; top:0; height:100%; width:50%; z-index:998; cursor:pointer; }
+.nav-esquerda, .nav-direta { position:fixed; top:0; height:100%; width:50%; z-index:998; cursor:pointer; }
 #topo { position:fixed; bottom:30px; right:30px; font-size:2.5em; background:rgba(233,30,99,0.8); color:white; border:none; border-radius:50%; width:70px; height:70px; cursor:pointer; display:none; }
 
 /* Seção de Feedback */
@@ -71,3 +71,20 @@ body.dark .feedback-section {
   font-size: 1.1em;
   line-height: 1.6;
 }
+
+/* Botão de Feedback (pra abrir a caixa de texto) */
+.btn-feedback {
+  padding: 15px 40px;
+  font-size: 1.3em;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(233,30,99,0.4);
+  transition: transform 0.2s;
+}
+.btn-feedback:hover {
+  transform: scale(1.05);
+                             }
