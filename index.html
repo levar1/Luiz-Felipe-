@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NULL cats</title>
+  <title>NULL cats LF</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#e91e63">
 </head>
 <body>
 
 <div id="progresso"><div class="barra"></div></div>
 
 <header>
-  <span>NULL cats</span>
+  <span>NULL cats LF</span>
   <div class="acoes">
     <button onclick="toggleMenu()">☰</button>
     <button onclick="toggleDarkMode()">🌙</button>
@@ -24,15 +26,15 @@
   📢 Livro em andamento — novas páginas em breve
 </div>
 
-<!-- OVERLAYS PARA CLICAR FORA -->
+<!-- OVERLAYS -->
 <div class="menu-overlay" onclick="toggleMenu()"></div>
 <div class="settings-overlay" onclick="toggleSettings()"></div>
 
 <!-- PÁGINA INICIAL -->
 <div id="home" class="home ativo">
   <img src="https://i.postimg.cc/yYdgHF50/direct/IMG-20251216-WA0038.jpg" alt="Capa" class="capa-home">
-  <h1>NULL cats</h1>
-  <p class="sinopse">Uma história épica sobre gatos em um mundo vazio, liberdade, traição e lutas intensas.<br>Ato 1: Vazio</p>
+  <h1>NULL cats LF</h1>
+  <p class="sinopse">Uma história épica sobre gatos em um mundo vazio, liberdade, traição e lutas intensas.<br>Ato 1: Vazio - por Luiz Felipe</p>
   <button onclick="startReading()" class="btn-start">Começar a Ler</button>
   <button id="continuarBtn" onclick="continueReading()" class="btn-continuar" style="display:none;">Continuar Leitura</button>
 </div>
@@ -48,7 +50,7 @@
   <ul id="menuPaginas"></ul>
 </aside>
 
-<!-- PAINEL DE CONFIGURAÇÕES -->
+<!-- CONFIGURAÇÕES -->
 <div id="settings" class="settings-panel">
   <button class="fechar-settings" onclick="toggleSettings()">✖</button>
   <h3>Configurações</h3>
@@ -61,12 +63,11 @@
   <button onclick="shareCurrentPage()">Compartilhar Página</button>
 </div>
 
-<!-- LEITOR VERTICAL -->
+<!-- LEITOR -->
 <div class="leitor" id="leitor">
   <div class="pagina vertical" data-page="intro">
     <img src="https://i.postimg.cc/yYkd573z/direct/IMG-20251216-WA0039.jpg" alt="Introdução">
   </div>
-
   <div class="pagina vertical" data-page="1">
     <img src="https://i.postimg.cc/PrPxcdvn/direct/IMG-20251216-WA0041.jpg" alt="Página 1">
   </div>
@@ -97,7 +98,6 @@
   <div class="pagina vertical" data-page="10">
     <img src="https://i.postimg.cc/3x2K5NKF/direct/IMG-20251216-WA0049.jpg" alt="Página 10">
   </div>
-
   <div class="pagina vertical em-breve">
     <h2>📖 Continuação em desenvolvimento</h2>
     <p>Novas páginas em breve!</p>
@@ -110,5 +110,10 @@
 <button id="topo" onclick="voltarTopo()">⬆</button>
 
 <script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
 </body>
-  </html>
+</html>
