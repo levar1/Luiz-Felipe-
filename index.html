@@ -2,16 +2,16 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Livro em desenvolvimento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>NULL cats - Livro em Desenvolvimento</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="progresso"></div>
+<div id="progresso"><div class="barra"></div></div>
 
 <header>
-  <span>Livro em desenvolvimento</span>
+  <span>NULL cats</span>
   <div class="acoes">
     <button onclick="toggleMenu()">☰</button>
     <button onclick="toggleDarkMode()">🌙</button>
@@ -23,50 +23,42 @@
   📢 Livro em andamento — novas páginas em breve
 </div>
 
-<!-- MENU LATERAL -->
+<!-- MENU LATERAL COM THUMBNAILS -->
 <aside id="menu">
   <h3>Páginas</h3>
   <ul id="menuPaginas"></ul>
 </aside>
 
+<!-- ÁREA DE LEITURA VERTICAL -->
 <div class="leitor" id="leitor">
-
-  <!-- CAPA DO SITE -->
-  <div class="capa">
-    <h1>Livro em Desenvolvimento</h1>
-    <p>Leitura digital interativa</p>
-    <p class="aviso">📖 Novos capítulos em breve</p>
-  </div>
-
   <!-- CAPA DO QUADRINHO -->
-  <div class="pagina"><span>Capa</span><img src="https://i.postimg.cc/yYdgHF50/IMG-20251216-WA0038.jpg"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/yYdgHF50/IMG-20251216-WA0038.jpg" alt="Capa"></div>
 
   <!-- INTRODUÇÃO -->
-  <div class="pagina"><span>Introdução</span><img src="https://i.postimg.cc/yYkd573z/IMG-20251216-WA0039.jpg"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/yYkd573z/IMG-20251216-WA0039.jpg" alt="Introdução"></div>
 
-  <!-- PÁGINAS DA HISTÓRIA (NÚMEROS CORRIGIDOS E ORDEM PERFEITA) -->
-  <div class="pagina"><span>Página 1</span><img src="https://i.postimg.cc/PrPxcdvn/IMG-20251216-WA0041.jpg"></div>  <!-- aonde estamos / espera que eu saiba -->
-  <div class="pagina"><span>Página 2</span><img src="https://i.postimg.cc/zDPDT4tk/IMG-20251216-WA0042.jpg"></div>  <!-- não sei / pra casa / irmãos diferentes -->
-  <div class="pagina"><span>Página 3</span><img src="https://i.postimg.cc/wT7vP9RH/IMG-20251216-WA0040.jpg"></div>  <!-- visão limitada / o que é isso -->
-  <div class="pagina"><span>Página 4</span><img src="https://i.postimg.cc/5N60GfQJ/IMG-20251216-WA0043.jpg"></div>  <!-- estrela explode / BRRR! -->
-  <div class="pagina"><span>Página 5</span><img src="https://i.postimg.cc/bNDygL4z/IMG-20251216-WA0044.jpg"></div>  <!-- finalmente livre (Elims) -->
-  <div class="pagina"><span>Página 6</span><img src="https://i.postimg.cc/v8S85Cqq/IMG-20251216-WA0045.jpg"></div>  <!-- 2 anos antes -->
-  <div class="pagina"><span>Página 7</span><img src="https://i.postimg.cc/gkCYT8Pc/IMG-20251216-WA0048.jpg"></div>  <!-- continuação flashback (luta antiga) -->
-  <div class="pagina"><span>Página 8</span><img src="https://i.postimg.cc/5NY4gpDf/IMG-20251216-WA0046.jpg"></div>  <!-- tempos atuais / você está fraco -->
-  <div class="pagina"><span>Página 9</span><img src="https://i.postimg.cc/8P210MVr/IMG-20251216-WA0047.jpg"></div>  <!-- possessão / quer lutar / golpe baixo -->
-  <div class="pagina"><span>Página 10</span><img src="https://i.postimg.cc/3x2K5NKF/IMG-20251216-WA0049.jpg"></div> <!-- espadas / velho truque não funciona -->
+  <!-- PÁGINAS DA HISTÓRIA -->
+  <div class="pagina vertical"><img src="https://i.postimg.cc/PrPxcdvn/IMG-20251216-WA0041.jpg" alt="Página 1"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/zDPDT4tk/IMG-20251216-WA0042.jpg" alt="Página 2"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/wT7vP9RH/IMG-20251216-WA0040.jpg" alt="Página 3"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/5N60GfQJ/IMG-20251216-WA0043.jpg" alt="Página 4"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/bNDygL4z/IMG-20251216-WA0044.jpg" alt="Página 5"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/v8S85Cqq/IMG-20251216-WA0045.jpg" alt="Página 6"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/gkCYT8Pc/IMG-20251216-WA0048.jpg" alt="Página 7"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/5NY4gpDf/IMG-20251216-WA0046.jpg" alt="Página 8"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/8P210MVr/IMG-20251216-WA0047.jpg" alt="Página 9"></div>
+  <div class="pagina vertical"><img src="https://i.postimg.cc/3x2K5NKF/IMG-20251216-WA0049.jpg" alt="Página 10"></div>
 
   <!-- EM BREVE -->
-  <div class="pagina em-breve">
+  <div class="pagina vertical em-breve">
     <h2>📖 Continuação em desenvolvimento</h2>
     <p>Novas páginas serão adicionadas em breve.</p>
-    <p>Acompanhe as atualizações.</p>
   </div>
 </div>
 
-<div class="contador">
-  Página <span id="atual">1</span> de <span id="total">12</span> <!-- Capa + Intro + 10 páginas -->
-</div>
+<!-- SETAS DE NAVEGAÇÃO -->
+<div class="nav-esquerda" onclick="scrollAnterior()"></div>
+<div class="nav-direita" onclick="scrollProxima()"></div>
 
 <button id="topo" onclick="voltarTopo()">⬆</button>
 
